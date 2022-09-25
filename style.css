@@ -21,3 +21,123 @@
     --transition-not-drawer: margin-left 0.4s ease-in;
     --transition-drawer: width 0.4s ease-in;
 }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "drawer nav nav nav"
+    "drawer content content content";
+    grid-template-rows: 0.8fr 4fr;
+    grid-template-columns: 5rem 1fr 1fr 1fr;
+}
+
+.drawer {
+ grid-area: drawer;
+ background-color: var(--drawer-color);
+ width: 5rem;
+ position: fixed;
+ transition: var(--transition-drawer);
+ overflow: hidden;
+ height:100vh;
+}
+
+.drawer:hover{
+    width: var(--drawer-width);
+}
+
+.drawer:hover > .menuItem > h1 {
+    display: inline;
+}
+
+.drawer:hover ~ .navbar,
+.drawer:hover ~ .content {
+    margin-left: calc(var(--drawer-width) - 5rem);
+}
+
+.menuItem > h1 {
+    display: none;
+    margin-left: 5%;
+}
+
+
+.menuItem{
+    color: var(--text-secondary);
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menuItem > * {
+    cursor: pointer;
+}
+
+.drawer > div:not(:first-child) > * {
+    padding:1vw, 0.1vw, 0.1vw, 0vw;
+    padding-top: 0.5vw;
+    font-size: calc(20px + 0.2vw);
+    padding-left:20px;
+}
+
+.drawer > div:not(:first-child) > img {
+    width: calc(20px + 0.5vw);
+    width: calc(20px + 0.5vw);
+}
+
+.drawer > div:nth-child(8) {
+    padding-top: 50px;}
+
+.dashboard {
+    font-size: clamp(12px, calc(25px + 0.9vw), 50px);
+}
+
+.dashboard img {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(40px + 0.7vw);
+    height: calc(40px + 0.7vw);
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+/* NavBar Styling */
+.navbar {
+  grid-area: nav;
+  transition: var(--transition-not-drawer);
+  background-color: var(--nav-bg);
+  padding: 1.5rem 3rem;
+  border-bottom: 2px solid rgb(219, 219, 219);
+}
+
+.topNav {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    margin-bottom: 2.5rem;
+}
+
+.search {
+    display:flex;
+    align-items: center;
+    margin-right: auto;
+    width: 100%;
+}
+
+.search > input {
+    display: block;
+    border: 0;
+    background-color: var(--nav-color-1);
+    padding: 0.5rem 1.5rem;
+    outline-color: var(--blue-1);
+    margin-left: 1.25rem;
+    border-radius: 5px;
+    width: min(80%, 600px);
+}
+
+
+.content {
+  grid-area: content;
+  transition: var(--transition-not-drawer);
+}
