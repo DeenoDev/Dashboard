@@ -1,0 +1,23 @@
+:root {
+    font-size: 16px;
+    font-family: "Ubuntu Condensed", sans-serif;
+    --text-primary: black;
+    --text-secondary: white;
+    --bg-primary: #2323232e;
+    --bg-secondary: #141418;
+    --transition-speed: 1s;
+    --drawer-color: #0ea5e9;
+    --drawer-width: clamp(210px, 22vw, 325px);
+    --nav-bg: #f8f8f8;
+    --nav-color-1: #c9c9c9;
+    --nav-color-2: #62daff6e;
+    --blue-1: #084C61;
+    --gh-avatar: url("https://github.com/DeenoDev.png");
+    --gh-avatar: url("https://github.com/james.png");
+    --gh-avatar: url("https://github.com/bob.png");
+    --gh-avatar: url("https://github.com/alica.png");
+    --gh-avatar: url("https://github.com/amy.png");
+    --content-gray: rgb(235,235,235);
+    --transition-not-drawer: margin-left 0.4s ease-in;
+    --transition-drawer: width 0.4s ease-in;
+}
