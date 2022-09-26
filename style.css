@@ -41,6 +41,7 @@ body {
  transition: var(--transition-drawer);
  overflow: hidden;
  height:100vh;
+ z-index: 1000;
 }
 
 .drawer:hover{
@@ -110,6 +111,8 @@ body {
   background-color: var(--nav-bg);
   padding: 1.5rem 3rem;
   border-bottom: 2px solid rgb(219, 219, 219);
+  position:sticky;
+  top: 0;
 }
 
 .topNav {
@@ -155,9 +158,6 @@ body {
     height: 40px;
     width: 40px;
 }
-
-
-
 
 img {
     cursor: pointer;
@@ -238,7 +238,7 @@ img {
   .projects .cards {
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: 250px;
     gap: 2rem;
     padding-bottom: 2rem;
@@ -285,5 +285,100 @@ img {
   .announcements {
     grid-area: announcements;
   }
+
+  .announcement {
+    width: 25ch;
+    padding: 1rem 0;
+  }
+
+  .announcement:first-child {
+    padding-top: 0;
+  }
+
+  .announcement:last-child {
+    padding-bottom: 0;
+  }
+
+  .announcement h5 {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .announcement p {
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .announcement + .announcement {
+    border-top: gray 1px solid;
+  }
+
+  .trending {
+    grid-area: trending;
+  }
+
+  .trending .card {
+    padding: 1.5rem;
+  }
+
+  .trend {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+
+  .trend + .trend {
+    margin-top:1.5rem;
+  }
+
+  .trend .account {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size:0.9rem;
+  }
+
+  .trend .username {
+    font-weight: 500;
+    margin-bottom:0.15rem;
+  }
+
+  .trend-1 .gh-avatar2 {
+    background: var(--gh-avatar2) center center/ cover no-repeat center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .trend-2 .gh-avatar {
+    background: var(--gh-avatar) center center/ cover no-repeat center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .trend-3 .gh-avatar3 {
+    background: var(--gh-avatar3) center center/ cover no-repeat center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .trend-4 .gh-avatar4 {
+    background: var(--gh-avatar) center center/ cover no-repeat center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  
+
+
+  
 
 
