@@ -132,12 +132,158 @@ body {
     padding: 0.5rem 1.5rem;
     outline-color: var(--blue-1);
     margin-left: 1.25rem;
-    border-radius: 5px;
+    border-radius: 10px;
     width: min(80%, 600px);
+    margin-right: 20px;
+}
+
+.navbar .account {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size:1.2rem;
+    font-weight:800;
+}
+
+.gh-avatar {
+    background: var(--gh-avatar) center center / cover no-repeat;
+    border-radius: 50%;
+}
+
+.account .gh-avatar {
+    margin: 0 1rem 0 2.5rem 0;
+    height: 40px;
+    width: 40px;
 }
 
 
+
+
+img {
+    cursor: pointer;
+}
+
+.bottom {
+    display:flex;justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile .gh-avatar {
+    width: 75px;
+    height: 75px;
+}
+
+.greeting {
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+}
+
+.profile .name {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btn {
+    background-color: var(--drawer-color);
+    color: var(--text-secondary);
+    font-weight: 800;
+    padding: 0.5rem 1.8rem;
+    border-radius: 7px;
+    font-size: 20px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+/* Main Content */
 .content {
-  grid-area: content;
-  transition: var(--transition-not-drawer);
-}
+    grid-area: content;
+    transition: var(--transition-not-drawer);
+    background-color: var(--content-gray);
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: 1fr auto; /* Adjust this to fix the announcements and trending section*/
+    grid-template-rows: min-content 1fr;
+    gap: 2rem;
+    grid-template-areas: 
+     "projects announcements"
+     "projects trending";
+     overflow: auto;
+     height: 100%;
+  }
+
+  .content h3{
+    font-size:1.3rem;
+    font-weight:600;
+    margin-bottom: 0.8rem;
+  }
+
+  .projects {
+    grid-area: projects;
+
+  }
+
+  .projects .cards {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px 1fr));
+    grid-auto-rows: 250px;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .projects .card {
+    background-color: var(--nav-color-2);
+    border-left: 10px solid rgb(209, 136, 0);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project .card-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .projects .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .projects .icons {
+    margin-top: auto;
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.8rem;
+    align-items: center;
+    padding-bottom: 5px;
+    padding-right: 5px;
+  }
+
+  .card {
+    background-color: rgba(45, 187, 187,.459);
+    padding: 2rem;
+    border-radius: .6rem;
+    box-shadow: 0 10px 15px -3px rgba(0 0 0 / .1), 0 4px 6px -4px rgba(0 0 0 0 / 0.1);
+  }
+
+  .announcements {
+    grid-area: announcements;
+  }
+
+
