@@ -370,10 +370,27 @@ img {
   }
 
   .trend-4 .gh-avatar4 {
-    background: var(--gh-avatar) center center/ cover no-repeat center;
+    background: var(--gh-avatar4) center center/ cover no-repeat center;  
     border-radius: 50%;
     width: 40px;
     height: 40px;
+  }
+
+  .projects h5 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding-bottom: 0.5rem;
+  }
+
+  .announcements .card-title {
+    font-size: 1.2rem;
+  }
+
+  .thumbnail {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
   }
 
   
